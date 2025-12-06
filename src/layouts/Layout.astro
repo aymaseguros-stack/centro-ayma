@@ -23,6 +23,16 @@ const { title, description = "Centro de conocimiento AYMA Advisors - Seguros y g
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.png" />
+  <meta property="og:url" content="https://centro.aymaseguros.com.ar" />
+  
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY9N1CNKZ0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VY9N1CNKZ0');
+  </script>
   
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -31,7 +41,12 @@ const { title, description = "Centro de conocimiento AYMA Advisors - Seguros y g
     "@type": "Organization",
     "name": "AYMA Advisors",
     "url": "https://centro.aymaseguros.com.ar",
-    "logo": "https://centro.aymaseguros.com.ar/logo-ayma.png"
+    "logo": "https://centro.aymaseguros.com.ar/logo-ayma.png",
+    "sameAs": [
+      "https://instagram.com/aymaseguros",
+      "https://linkedin.com/company/ayma-seguros",
+      "https://x.com/AymaSeguros"
+    ]
   }
   </script>
 </head>
@@ -40,7 +55,7 @@ const { title, description = "Centro de conocimiento AYMA Advisors - Seguros y g
   <header class="bg-slate-800/50 border-b border-slate-700 sticky top-0 z-50 backdrop-blur-sm">
     <div class="max-w-6xl mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3" data-track="header_logo">
           <img src="/logo-ayma.png" alt="AYMA" class="w-10 h-10 rounded-lg" />
           <div>
             <span class="font-bold text-lg">Centro AYMA</span>
@@ -48,13 +63,14 @@ const { title, description = "Centro de conocimiento AYMA Advisors - Seguros y g
           </div>
         </a>
         <nav class="hidden md:flex items-center gap-6">
-          <a href="/" class="hover:text-cyan-400 transition">Inicio</a>
-          <a href="/knowledge" class="hover:text-cyan-400 transition">Knowledge</a>
-          <a href="/legal" class="hover:text-cyan-400 transition">Legal</a>
-          <a href="/compliance" class="hover:text-cyan-400 transition">Compliance</a>
-          <a href="/noticias" class="hover:text-cyan-400 transition">Noticias</a>
+          <a href="/" class="hover:text-cyan-400 transition" data-track="nav_inicio">Inicio</a>
+          <a href="/knowledge" class="hover:text-cyan-400 transition" data-track="nav_knowledge">Knowledge</a>
+          <a href="/legal" class="hover:text-cyan-400 transition" data-track="nav_legal">Legal</a>
+          <a href="/compliance" class="hover:text-cyan-400 transition" data-track="nav_compliance">Compliance</a>
+          <a href="/noticias" class="hover:text-cyan-400 transition" data-track="nav_noticias">Noticias</a>
+          <a href="https://aymaseguros.com.ar" class="text-cyan-400 hover:text-cyan-300 transition" data-track="nav_landing">Landing</a>
         </nav>
-        <a href="https://wa.me/5493416952259" target="_blank" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+        <a href="https://wa.me/5493416952259" target="_blank" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-medium transition" data-track="header_whatsapp">
           💬 Contactar
         </a>
       </div>
@@ -69,28 +85,36 @@ const { title, description = "Centro de conocimiento AYMA Advisors - Seguros y g
   <!-- Footer -->
   <footer class="bg-slate-800/30 border-t border-slate-700 mt-16">
     <div class="max-w-6xl mx-auto px-4 py-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 class="font-bold mb-3">AYMA Advisors</h3>
           <p class="text-slate-400 text-sm">Gestores de Riesgos desde 2008</p>
           <p class="text-slate-500 text-xs mt-2">PAS N° 68323 - SSN</p>
         </div>
         <div>
-          <h3 class="font-bold mb-3">Secciones</h3>
+          <h3 class="font-bold mb-3">Centro AYMA</h3>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="/knowledge" class="hover:text-white">📚 Knowledge</a></li>
-            <li><a href="/legal" class="hover:text-white">⚖️ Legal</a></li>
-            <li><a href="/compliance" class="hover:text-white">✅ Compliance</a></li>
-            <li><a href="/noticias" class="hover:text-white">📰 Noticias</a></li>
+            <li><a href="/knowledge" class="hover:text-white" data-track="footer_knowledge">📚 Knowledge</a></li>
+            <li><a href="/legal" class="hover:text-white" data-track="footer_legal">⚖️ Legal</a></li>
+            <li><a href="/compliance" class="hover:text-white" data-track="footer_compliance">✅ Compliance</a></li>
+            <li><a href="/noticias" class="hover:text-white" data-track="footer_noticias">📰 Noticias</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold mb-3">Accesos</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="https://aymaseguros.com.ar" class="hover:text-white" data-track="footer_landing">🏠 Landing</a></li>
+            <li><a href="https://portal.aymaseguros.com.ar" class="hover:text-white" data-track="footer_portal">🔐 Portal Clientes</a></li>
+            <li><a href="https://wa.me/5493416952259" class="hover:text-white" data-track="footer_whatsapp">💬 WhatsApp</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold mb-3">Síguenos</h3>
           <div class="flex gap-4">
-            <a href="https://instagram.com/aymaseguros" target="_blank" class="text-slate-400 hover:text-pink-400">IG</a>
-            <a href="https://facebook.com/61584119926136" target="_blank" class="text-slate-400 hover:text-blue-400">FB</a>
-            <a href="https://linkedin.com/company/ayma-seguros" target="_blank" class="text-slate-400 hover:text-blue-500">LI</a>
-            <a href="https://x.com/AymaSeguros" target="_blank" class="text-slate-400 hover:text-white">X</a>
+            <a href="https://instagram.com/aymaseguros" target="_blank" class="text-slate-400 hover:text-pink-400" data-track="social_instagram">IG</a>
+            <a href="https://facebook.com/61584119926136" target="_blank" class="text-slate-400 hover:text-blue-400" data-track="social_facebook">FB</a>
+            <a href="https://linkedin.com/company/ayma-seguros" target="_blank" class="text-slate-400 hover:text-blue-500" data-track="social_linkedin">LI</a>
+            <a href="https://x.com/AymaSeguros" target="_blank" class="text-slate-400 hover:text-white" data-track="social_x">X</a>
           </div>
         </div>
       </div>
@@ -100,5 +124,193 @@ const { title, description = "Centro de conocimiento AYMA Advisors - Seguros y g
       </div>
     </div>
   </footer>
+
+  <!-- AYMA Tokenización Completa -->
+  <script is:inline>
+    (function() {
+      const VAULT_URL = "https://vault.aymaseguros.com.ar";
+      
+      // Generar tokens
+      function generarToken(prefijo) {
+        const fecha = new Date().toISOString().slice(0,10).replace(/-/g,'');
+        const hash = Math.random().toString(36).substring(2, 8).toUpperCase();
+        return prefijo + '-' + fecha + '-' + hash;
+      }
+      
+      // Session token único
+      const sessionToken = generarToken('AYMA-CENTRO');
+      sessionStorage.setItem('ayma_centro_session', sessionToken);
+      
+      // Registrar evento en vault
+      async function registrarEvento(tipo, datos = {}) {
+        const payload = {
+          token: generarToken('EVT-CENTRO'),
+          session_token: sessionToken,
+          tipo_evento: tipo,
+          origen: 'centro-ayma',
+          pagina: window.location.pathname,
+          url_completa: window.location.href,
+          referrer: document.referrer || null,
+          user_agent: navigator.userAgent,
+          timestamp: new Date().toISOString(),
+          datos: datos
+        };
+        
+        try {
+          await fetch(VAULT_URL + '/api/evento', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch (e) {
+          // Registrar error de tracking
+          registrarError('tracking_failed', e.message, payload);
+        }
+        
+        // GA4
+        if (window.gtag) {
+          gtag('event', tipo, {
+            event_category: 'centro_ayma',
+            session_token: sessionToken,
+            ...datos
+          });
+        }
+        
+        return payload.token;
+      }
+      
+      // Registrar error tokenizado
+      async function registrarError(tipo, mensaje, contexto = {}) {
+        const errorToken = generarToken('AYMA-ERR-CENTRO');
+        
+        const payload = {
+          token: errorToken,
+          session_token: sessionToken,
+          tipo_error: tipo,
+          mensaje: mensaje,
+          origen: 'centro-ayma',
+          pagina: window.location.pathname,
+          timestamp: new Date().toISOString(),
+          contexto: contexto
+        };
+        
+        try {
+          await fetch(VAULT_URL + '/api/error', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch (e) {
+          console.error('[AYMA-ERR]', errorToken, mensaje);
+        }
+        
+        return errorToken;
+      }
+      
+      // Registrar anulación tokenizada
+      async function registrarAnulacion(tipo, motivo, datos = {}) {
+        const anulToken = generarToken('AYMA-ANUL-CENTRO');
+        
+        const payload = {
+          token: anulToken,
+          session_token: sessionToken,
+          tipo_anulacion: tipo,
+          motivo: motivo,
+          origen: 'centro-ayma',
+          pagina: window.location.pathname,
+          timestamp: new Date().toISOString(),
+          datos: datos
+        };
+        
+        try {
+          await fetch(VAULT_URL + '/api/anulacion', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch (e) {
+          registrarError('anulacion_failed', e.message, payload);
+        }
+        
+        return anulToken;
+      }
+      
+      // Exponer funciones globalmente
+      window.AYMA = {
+        registrarEvento,
+        registrarError,
+        registrarAnulacion,
+        sessionToken
+      };
+      
+      // === AUTO-TRACKING ===
+      
+      // Pageview
+      registrarEvento('pageview', { title: document.title });
+      
+      // Clicks en elementos trackeados
+      document.addEventListener('click', function(e) {
+        const el = e.target.closest('[data-track]');
+        if (el) {
+          registrarEvento('click', {
+            elemento: el.getAttribute('data-track'),
+            texto: el.textContent?.trim().substring(0, 50),
+            href: el.href || null
+          });
+        }
+      });
+      
+      // Scroll depth
+      let maxScroll = 0;
+      const scrollMilestones = [25, 50, 75, 100];
+      window.addEventListener('scroll', function() {
+        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        scrollMilestones.forEach(milestone => {
+          if (scrollPercent >= milestone && maxScroll < milestone) {
+            maxScroll = milestone;
+            registrarEvento('scroll', { depth: milestone });
+          }
+        });
+      });
+      
+      // Time on page
+      const startTime = Date.now();
+      window.addEventListener('beforeunload', function() {
+        const seconds = Math.round((Date.now() - startTime) / 1000);
+        registrarEvento('exit', { time_seconds: seconds });
+        
+        // Si salió muy rápido, registrar como anulación (bounce)
+        if (seconds < 5) {
+          registrarAnulacion('bounce', 'Usuario salió en menos de 5 segundos', { time_seconds: seconds });
+        }
+      });
+      
+      // Capturar errores JS
+      window.addEventListener('error', function(e) {
+        registrarError('js_error', e.message, {
+          filename: e.filename,
+          lineno: e.lineno,
+          colno: e.colno
+        });
+      });
+      
+      // Capturar errores de promesas
+      window.addEventListener('unhandledrejection', function(e) {
+        registrarError('promise_error', e.reason?.message || String(e.reason), {});
+      });
+      
+      // Copiar texto (posible anulación si copia mucho)
+      document.addEventListener('copy', function(e) {
+        const selection = window.getSelection().toString();
+        if (selection.length > 500) {
+          registrarAnulacion('content_copy', 'Usuario copió contenido extenso', { length: selection.length });
+        } else {
+          registrarEvento('copy', { length: selection.length });
+        }
+      });
+      
+      console.log('[Centro AYMA] Session:', sessionToken);
+    })();
+  </script>
 </body>
 </html>
