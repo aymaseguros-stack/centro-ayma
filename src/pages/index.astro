@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inicio">
+  <!-- Hero / Campaña Principal -->
+  <section class="text-center py-12">
+    <span class="bg-cyan-500/20 text-cyan-400 px-4 py-1 rounded-full text-sm font-medium">
+      🎯 Campaña Activa
+    </span>
+    <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4">
+      ¿Sabés cuánto cuesta NO estar asegurado?
+    </h1>
+    <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-8">
+      En Argentina, 4 millones de trabajadores independientes no tienen cobertura de accidentes. 
+      Un día sin trabajar puede costarte más que un año de prima.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/5493416952259?text=Hola!%20Quiero%20cotizar%20un%20seguro" 
+         class="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 rounded-xl font-bold text-lg transition">
+        Cotizar Ahora →
+      </a>
+      <a href="/knowledge/por-que-asegurarte" 
+         class="bg-slate-700 hover:bg-slate-600 px-8 py-4 rounded-xl font-medium transition">
+        Aprende Más
+      </a>
+    </div>
+  </section>
+
+  <!-- Versiones para redes (oculto, para copiar) -->
+  <div class="hidden" id="versiones-redes">
+    <div data-red="instagram">
+      🎯 4 MILLONES de argentinos trabajan SIN seguro de accidentes.
+      
+      Un día sin trabajar = pérdida de ingresos
+      Un accidente grave = deuda de por vida
+      
+      ¿Vos estás cubierto?
+      
+      📲 Link en bio para cotizar GRATIS
+      
+      #seguros #monotributo #autonomos #proteccion #aymaadvisors
+    </div>
+    <div data-red="linkedin">
+      El 60% de los trabajadores independientes en Argentina no cuenta con cobertura de accidentes personales.
+      
+      Esto representa un riesgo financiero significativo tanto para el profesional como para su familia.
+      
+      En AYMA Advisors, especializados en gestión de riesgos desde 2008, ofrecemos soluciones adaptadas a cada perfil profesional.
+      
+      ¿Querés evaluar tu situación actual? Contactanos sin compromiso.
+    </div>
+    <div data-red="twitter">
+      🚨 Dato: 4M de trabajadores independientes en Argentina NO tienen seguro de accidentes.
+      
+      Un accidente puede significar:
+      → Pérdida de ingresos
+      → Gastos médicos
+      → Deuda familiar
+      
+      Cotizá gratis → [link]
+    </div>
+    <div data-red="whatsapp">
+      Hola! 👋
+
+      ¿Sabías que 4 millones de argentinos trabajan sin cobertura de accidentes?
+      
+      En AYMA te ayudamos a proteger tu ingreso desde $X/mes.
+      
+      ¿Te interesa una cotización sin compromiso?
+    </div>
+    <div data-red="email-subject">¿Cuánto cuesta NO estar asegurado?</div>
+  </div>
+
+  <!-- Secciones -->
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+    <a href="/knowledge" class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-cyan-500 transition group">
+      <span class="text-4xl">📚</span>
+      <h2 class="font-bold text-xl mt-4 group-hover:text-cyan-400">Knowledge</h2>
+      <p class="text-slate-400 text-sm mt-2">Educación sobre seguros y gestión de riesgos</p>
+    </a>
+    <a href="/legal" class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-cyan-500 transition group">
+      <span class="text-4xl">⚖️</span>
+      <h2 class="font-bold text-xl mt-4 group-hover:text-cyan-400">Legal</h2>
+      <p class="text-slate-400 text-sm mt-2">Normativas SSN, UIF y marco regulatorio</p>
+    </a>
+    <a href="/compliance" class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-cyan-500 transition group">
+      <span class="text-4xl">✅</span>
+      <h2 class="font-bold text-xl mt-4 group-hover:text-cyan-400">Compliance</h2>
+      <p class="text-slate-400 text-sm mt-2">Actualizaciones y obligaciones regulatorias</p>
+    </a>
+    <a href="/noticias" class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-cyan-500 transition group">
+      <span class="text-4xl">📰</span>
+      <h2 class="font-bold text-xl mt-4 group-hover:text-cyan-400">Noticias</h2>
+      <p class="text-slate-400 text-sm mt-2">Actualidad del mercado asegurador</p>
+    </a>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-2xl p-8 mt-16 text-center border border-cyan-500/30">
+    <h2 class="text-2xl font-bold mb-4">¿Necesitás asesoramiento personalizado?</h2>
+    <p class="text-slate-300 mb-6">17 años de experiencia protegiendo personas y empresas</p>
+    <a href="https://wa.me/5493416952259" class="inline-block bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-medium transition">
+      💬 Hablar con un asesor
+    </a>
+  </section>
+</Layout>
